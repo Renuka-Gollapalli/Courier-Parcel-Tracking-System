@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-color: #0f172a;
+  --bg-surface: rgba(30, 41, 59, 0.7);
+  --bg-surface-hover: rgba(30, 41, 59, 0.9);
+  
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --secondary: #8b5cf6;
+  
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  
+  --border-color: rgba(255, 255, 255, 0.1);
+  --glass-border: 1px solid rgba(255,255,255,0.05);
+  
+  --danger: #ef4444;
+  --success: #10b981;
+  --warning: #f59e0b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.15), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.15), transparent 25%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: var(--bg-surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Layout */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(to right, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Base Inputs/Buttons */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.39);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.btn-icon {
+  background: transparent;
+  color: var(--text-muted);
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+.btn-icon:hover {
+  background: var(--bg-surface-hover);
+  color: var(--text-main);
+}
+
+.btn-danger {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+.btn-danger:hover {
+  background-color: rgba(239, 68, 68, 0.2);
+}
+
+input, select, textarea {
+  font-family: inherit;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+input:focus, select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}

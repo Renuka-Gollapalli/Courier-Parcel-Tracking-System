@@ -1,0 +1,13 @@
+﻿
+> logistics-app@0.0.0 build
+> vite build
+
+[36mvite v8.0.3 [32mbuilding client environment for production...[36m[39m
+[2K
+transforming...Γ£ô 25 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.46 kB Γöé gzip:  0.29 kB
+dist/assets/index-CxFSbtfJ.css    2.52 kB Γöé gzip:  1.06 kB
+dist/assets/index-CM1vAVIe.js   210.21 kB Γöé gzip: 64.66 kB
+
